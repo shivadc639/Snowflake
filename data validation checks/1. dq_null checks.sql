@@ -25,8 +25,7 @@ BEGIN
                            'FROM ' || database_name || '.INFORMATION_SCHEMA.COLUMNS ' ||
                            'WHERE TABLE_CATALOG = ''' || database_name || ''' ' ||
                            'AND TABLE_SCHEMA = ''' || schema_name || ''' ' ||
-                           'AND TABLE_NAME = ''' || table_name || ''' ' ||
-                           'ORDER BY ORDINAL_POSITION';
+                           'AND TABLE_NAME = ''' || table_name || ''' ';
     
     col_name_resultset := (EXECUTE IMMEDIATE :get_col_names_query);
     
